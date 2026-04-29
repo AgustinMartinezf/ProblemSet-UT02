@@ -1,7 +1,8 @@
 package Impl;
 
 import java.util.function.Consumer;
-import ucu.edu.aed.tda.TDAElemento;
+
+import ucu.edu.aed.tda.*;
 
 public class ElementoABBImpl<T> implements TDAElemento<T> {
 
@@ -323,4 +324,39 @@ public class ElementoABBImpl<T> implements TDAElemento<T> {
 
         return -1;
     }
+
+    public void cantidadNodosCompletos(TDALista<TDAElemento<T>> lista){ //Ejercicio 6
+        if (this.esHoja()) {//caso base
+            return;
+        }
+        if (this.hijoIzquierdo != null && this.hijoDerecho != null) {
+            lista.agregar(this);
+        }
+
+        //si solo tiene uno vuelve a recursar y no pasa nada si sigue
+        if (this.hijoIzquierdo != null) {
+            ((ElementoABBImpl<T>)this.hijoIzquierdo).cantidadNodosCompletos(lista);
+        }
+
+        if (this.hijoDerecho != null) {
+            ((ElementoABBImpl<T>)this.hijoDerecho).cantidadNodosCompletos(lista);
+        }
+    }
+
+    public void enNivel(int nivel, TDALista<TDAElemento<T>> lista) { //método para Ejercicio 6
+
+        if (nivel == 0) {
+            lista.agregar(this);
+            return;
+        }
+
+        if (hijoIzquierdo != null) {
+            ((ElementoABBImpl<T>) hijoIzquierdo).enNivel(nivel - 1, lista);
+        }
+
+        if (hijoDerecho != null) {
+            ((ElementoABBImpl<T>) hijoDerecho).enNivel(nivel - 1, lista);
+        }
+    }
+
 }

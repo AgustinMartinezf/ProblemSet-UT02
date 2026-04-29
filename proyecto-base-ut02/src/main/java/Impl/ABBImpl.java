@@ -1,8 +1,8 @@
 package Impl;
 
 import java.util.function.Consumer;
-import ucu.edu.aed.tda.TDAArbolBinario;
-import ucu.edu.aed.tda.TDAElemento;
+
+import ucu.edu.aed.tda.*;
 
 
 public class ABBImpl<T> implements TDAArbolBinario<T> {
@@ -141,7 +141,7 @@ public class ABBImpl<T> implements TDAArbolBinario<T> {
     }
 
     @Override
-    public int cantidadHojas() {
+    public int cantidadHojas() { //método hojas() Ejercicio 6
         if (raiz == null) {
             return 0;
         }
@@ -149,7 +149,7 @@ public class ABBImpl<T> implements TDAArbolBinario<T> {
     }
 
     @Override
-    public int cantidadNodosInternos() {
+    public int cantidadNodosInternos() { //método internos() Ejercicio 6
         if (raiz == null) {
             return 0;
         }
@@ -159,10 +159,36 @@ public class ABBImpl<T> implements TDAArbolBinario<T> {
     /**
      * Devuelve la altura del árbol. -1 si está vacío.
      */
-    public int altura() {
+    public int altura() { //Método altura() Ejercicio 6
         if (raiz == null) {
             return -1;
         }
         return raiz.altura();
     }
+    public int tamaño(){ //Método tamaño() Ejercicio 6
+        if (raiz==null) {
+            return 0;
+        }
+        return raiz.cantidadNodos();
+    }
+
+    public TDALista<TDAElemento<T>> completos(){ //Método completo Ejercicio 6
+        TDALista<TDAElemento<T>> lista = new ListaEnlazada<>();
+        if(raiz!=null){
+            ((ElementoABBImpl<T>)raiz).cantidadNodosCompletos(lista);
+        }
+        return lista;
+    }
+
+     public TDALista<TDAElemento<T>> enNivel(int nivel) { //Método enNivel() Ejercicio 6
+
+        TDALista<TDAElemento<T>> lista = new ListaEnlazada<>();
+
+        if (raiz != null) {
+            ((ElementoABBImpl<T>) raiz).enNivel(nivel, lista);
+        }
+        return lista;
+    }
+
+
 }

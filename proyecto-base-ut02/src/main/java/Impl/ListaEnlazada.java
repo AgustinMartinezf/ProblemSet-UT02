@@ -229,6 +229,8 @@ public class ListaEnlazada<T> implements TDALista<T> {
             throw new IndexOutOfBoundsException("Índice fuera de rango: " + index);
         }
     }
+
+    
 }
 
 
