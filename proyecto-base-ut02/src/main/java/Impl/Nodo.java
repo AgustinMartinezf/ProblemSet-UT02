@@ -1,4 +1,4 @@
-package ucu.edu.aed.impl;
+package Impl;
 
 public class Nodo<T> {
     private T dato;

@@ -1,4 +1,4 @@
-package ucu.edu.aed.impl;
+package Impl;
 
 import ucu.edu.aed.tda.TDALista;
 import java.util.Comparator;
