@@ -1,5 +1,6 @@
 ## Ejercicio 12 — El Grimorio del Archimago
-### * Consultar hechizos prohibidos (ID impar)
+
+### \* Consultar hechizos prohibidos (ID impar)
 
 **1. Descripción en lenguaje natural:**
 
@@ -8,10 +9,12 @@ Se recorren todos los nodos del árbol (recorrido inorden para obtenerlos ordena
 **2. Precondiciones y Postcondiciones:**
 
 PRECONDICIONES:
+
 - El árbol (grimorio) puede estar vacío o tener hechizos insertados.
 - Cada hechizo tiene un ID entero positivo.
 
 POSTCONDICIONES:
+
 - Se devuelve una lista con todos los hechizos cuyo ID es impar.
 - La lista está ordenada por ID (consecuencia del recorrido inorden).
 - El árbol no se modifica.
@@ -48,7 +51,7 @@ Fin
 
 **4. Tiempo de ejecución:** O(n), donde n es la cantidad de hechizos. Se visita cada nodo exactamente una vez.
 
-### * Generar el cántico
+### \* Generar el cántico
 
 **1. Descripción en lenguaje natural:**
 
@@ -57,9 +60,11 @@ Se recorre el árbol en inorden. Para cada hechizo cuyo ID es impar (prohibido),
 **2. Precondiciones y Postcondiciones:**
 
 PRECONDICIONES:
+
 - El árbol (grimorio) puede estar vacío o tener hechizos.
 
 POSTCONDICIONES:
+
 - Se devuelve una cadena con los nombres de los hechizos prohibidos (ID impar), en orden de ID, separados por " - ".
 - Si no hay hechizos prohibidos, se devuelve una cadena vacía.
 
